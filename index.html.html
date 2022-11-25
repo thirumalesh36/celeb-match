@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Hero or Heroine</title>
+     <style>
+          *{
+               box-sizing: border-box;
+               margin: 0%;
+               padding: 0%;
+          }
+          .main{
+             
+                padding: 100px;
+               margin: auto;
+               display: flex;
+               margin-top: 10%;
+               flex-direction: column;
+               align-items: center;
+               justify-content: center;
+               gap:20px;
+               text-align: center;
+
+            }
+            input{
+               border:1px solid orange;
+               border-radius: 18px;
+               padding: 9px;
+            }
+            option{
+               accent-color: orange;
+
+            }
+            select{
+               padding: 9px;
+               border-radius: 18px;
+               accent-color: orange;
+            }
+            label{
+               font-family: Arial, Helvetica, sans-serif;
+               color:rgb(0, 0, 0)
+            }
+            #res{
+               font-family: Arial, Helvetica, sans-serif;
+               text-transform: uppercase;
+               text-align: center;
+      }
+      button{
+          background-color: rgb(0, 0, 0);
+          color: rgb(255, 255, 255);
+          padding: 9px;
+          border-radius: 18px;
+          border:orange
+      }
+     </style>
+</head>
+<body>
+     <div class="main">
+          <input type="text" id="ip">
+          <label for="choic">Actor or Actress</label>
+         <select id="choice">
+          <option name="choic" value="boy">Hero</option>
+          <option name="choic" value="girl">Heroine</option>
+          </select>
+         <label for="industry">Which industry</label>
+         <select id="choices">
+          <option name="industry" value="tolly">Tollywood</option>
+          <option name="industry" value="bolly">Bollywood</option>
+          <option name="industry" value="holly">Hollywood</option>
+         </select>
+         <button id="btn">Check</button>
+         <h2 id="res"></h2>
+     </div>
+     <script>
+          document.getElementById('btn').onclick=function(){
+               name = document.getElementById('ip').value;
+               undef = ' '
+               name!=''||name!= undef  ? name.toLowerCase():name;
+               res = document.getElementById('res');
+               choice = document.getElementById('choice').value;
+               console.log(choice)
+               indu = document.getElementById('choices').value;
+                
+               tollyAct = ['ram charan','chiranjeevi','ntr','prabhas'];
+               tollyIne = ['kajal','mrunal','rashi kanna','tamanna'];
+               bollyAct = ['ranbir','ajay deavagan','tiger shroff','sharukh khan'];
+               bollyIne = ['shradhha kappor','alia bhatt','nora fatehi','deepika padukone'];
+               hollyAct = ['rock','chris evans','chris hemsworth','rdj','leonardo di caprio','jeremy renner']
+               hollyIne = ['scarlet johansson','elizabeth olsen','brie larson','kate winslet','emma wattson']
+               rand1 = Math.floor(Math.random()*tollyAct.length);
+               rand2=Math.floor(Math.random()*hollyAct.length);
+               rand3=Math.floor(Math.random()*hollyIne.length);
+              //for hero
+               if(choice=='boy'){
+                         if(indu=='tolly'){
+                         if(name==''||name== undef){
+                         alert("Please enter your name")
+                         }
+                         else{
+                         res.innerHTML=tollyAct[rand1]
+                         }
+                         }
+                    if(indu=='bolly'){
+                              if(name==''||name== undef){
+                              alert("Please enter your name")
+                              }
+                              else{
+                              res.innerHTML=bollyAct[rand1]
+                              }
+                    }
+                    if(indu=='holly'){
+                              if(name==''||name== undef){
+                              alert("Please enter your name")
+                              }
+                              else{
+                              res.innerHTML=hollyAct[rand2]
+                              }
+                    }
+                   }
+                   //for heroine
+                   if(choice=='girl'){
+                         if(indu=='tolly'){
+                         if(name==''||name== undef){
+                         alert("Please enter your name")
+                         }
+                         else{
+                         res.innerHTML=tollyIne[rand1]
+                         }
+                         }
+                    if(indu=='bolly'){
+                              if(name==''||name== undef){
+                              alert("Please enter your name")
+                              }
+                              else{
+                              res.innerHTML=bollyIne[rand1]
+                              }
+                    }
+                    if(indu=='holly'){
+                              if(name==''||name== undef){
+                              alert("Please enter your name")
+                              }
+                              else{
+                              res.innerHTML=hollyIne[rand3]
+                              }
+                    }
+                   }
+               }
+               
+     </script>
+</body>
+</html>
